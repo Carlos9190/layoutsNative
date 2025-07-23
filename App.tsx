@@ -1,39 +1,148 @@
-import { View, StyleSheet } from 'react-native'
+import { View, StyleSheet, Image, Text, ScrollView } from 'react-native'
 
 export default function App() {
   return (
     <>
-      <View style={styles.container}>
-        <View style={styles.box1}></View>
-        <View style={styles.box2}></View>
-        <View style={styles.box3}></View>
-        <View style={styles.box4}></View>
-      </View>
+      <ScrollView>
+        <View style={{ flexDirection: 'row' }}>
+          <Image
+            style={styles.banner}
+            source={require('./assets/img/bg.jpg')}
+          />
+        </View>
+
+        <View style={styles.container}>
+          <Text style={styles.title}>What to do in Paris</Text>
+
+          <ScrollView
+            horizontal={true}
+          >
+            <View>
+              <Image
+                style={styles.city}
+                source={require('./assets/img/actividad1.jpg')}
+              />
+            </View>
+            <View>
+              <Image
+                style={styles.city}
+                source={require('./assets/img/actividad2.jpg')}
+              />
+            </View>
+            <View>
+              <Image
+                style={styles.city}
+                source={require('./assets/img/actividad3.jpg')}
+              />
+            </View>
+            <View>
+              <Image
+                style={styles.city}
+                source={require('./assets/img/actividad4.jpg')}
+              />
+            </View>
+            <View>
+              <Image
+                style={styles.city}
+                source={require('./assets/img/actividad5.jpg')}
+              />
+            </View>
+          </ScrollView>
+
+          <Text style={styles.title}>Best lodgments</Text>
+          <View>
+            <View>
+              <Image
+                style={styles.bests}
+                source={require('./assets/img/mejores1.jpg')}
+              />
+            </View>
+            <View>
+              <Image
+                style={styles.bests}
+                source={require('./assets/img/mejores2.jpg')}
+              />
+            </View>
+            <View>
+              <Image
+                style={styles.bests}
+                source={require('./assets/img/mejores3.jpg')}
+              />
+            </View>
+          </View>
+
+          <Text style={styles.title}>Lodgments in LA</Text>
+          <View style={styles.list}>
+            <View style={styles.itemList}>
+              <Image
+                style={styles.bests}
+                source={require('./assets/img/hospedaje1.jpg')}
+              />
+              <Text style={styles.text}>Option 1</Text>
+            </View>
+            <View style={styles.itemList}>
+              <Image
+                style={styles.bests}
+                source={require('./assets/img/hospedaje2.jpg')}
+              />
+              <Text style={styles.text}>Option 2</Text>
+            </View>
+            <View style={styles.itemList}>
+              <Image
+                style={styles.bests}
+                source={require('./assets/img/hospedaje3.jpg')}
+              />
+              <Text style={styles.text}>Option 3</Text>
+            </View>
+            <View style={styles.itemList}>
+              <Image
+                style={styles.bests}
+                source={require('./assets/img/hospedaje4.jpg')}
+              />
+              <Text style={styles.text}>Option 4</Text>
+            </View>
+          </View>
+
+        </View>
+      </ScrollView>
     </>
   )
 }
 
 const styles = StyleSheet.create({
+  banner: {
+    height: 250,
+    flex: 1
+  },
+  title: {
+    fontWeight: 'bold',
+    fontSize: 24,
+    marginVertical: 20,
+    textAlign: 'center'
+  },
   container: {
-    backgroundColor: 'cornflowerblue',
-    flex: 1,
-    flexDirection: 'column',
-    justifyContent: 'center'
+    marginHorizontal: 10
   },
-  box1: {
-    padding: 20,
-    backgroundColor: 'navy'
+  city: {
+    width: 250,
+    height: 300,
+    marginRight: 10
   },
-  box2: {
-    padding: 20,
-    backgroundColor: 'yellow'
+  bests: {
+    width: '100%',
+    height: 200,
+    marginVertical: 5
   },
-  box3: {
-    padding: 20,
-    backgroundColor: 'teal'
+  list: {
+    flexDirection: 'row',
+    flexWrap: 'wrap',
+    justifyContent: 'space-between'
   },
-  box4: {
-    padding: 20,
-    backgroundColor: 'green'
+  itemList: {
+    flexBasis: '49%'
+  },
+  text: {
+    textAlign: 'center',
+    fontWeight: 'bold'
   }
 })
