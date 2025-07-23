@@ -1,28 +1,39 @@
-/**
- * Sample React Native App
- * https://github.com/facebook/react-native
- *
- * @format
- */
+import { View, StyleSheet } from 'react-native'
 
-import { NewAppScreen } from '@react-native/new-app-screen';
-import { StatusBar, StyleSheet, useColorScheme, View } from 'react-native';
-
-function App() {
-  const isDarkMode = useColorScheme() === 'dark';
-
+export default function App() {
   return (
-    <View style={styles.container}>
-      <StatusBar barStyle={isDarkMode ? 'light-content' : 'dark-content'} />
-      <NewAppScreen templateFileName="App.tsx" />
-    </View>
-  );
+    <>
+      <View style={styles.container}>
+        <View style={styles.box1}></View>
+        <View style={styles.box2}></View>
+        <View style={styles.box3}></View>
+        <View style={styles.box4}></View>
+      </View>
+    </>
+  )
 }
 
 const styles = StyleSheet.create({
   container: {
+    backgroundColor: 'cornflowerblue',
     flex: 1,
+    flexDirection: 'column',
+    justifyContent: 'center'
   },
-});
-
-export default App;
+  box1: {
+    padding: 20,
+    backgroundColor: 'navy'
+  },
+  box2: {
+    padding: 20,
+    backgroundColor: 'yellow'
+  },
+  box3: {
+    padding: 20,
+    backgroundColor: 'teal'
+  },
+  box4: {
+    padding: 20,
+    backgroundColor: 'green'
+  }
+})
